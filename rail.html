@@ -20,7 +20,7 @@
     }
 
     .table-wrap {
-      max-width: 1400px;
+      max-width: 1600px;
       margin: 0 auto;
     }
 
@@ -47,6 +47,7 @@
       position: sticky;
       top: 0;
       z-index: 1;
+      white-space: nowrap;
     }
 
     tr:nth-child(even) td {
@@ -69,13 +70,16 @@
     }
 
     .status-col {
-      width: 22%;
-      white-space: nowrap;
+      width: 28%;
     }
 
     .workflow-block {
-      margin: 0;
+      margin: 0 0 6px 0;
       padding: 0;
+    }
+
+    .workflow-block:last-child {
+      margin-bottom: 0;
     }
 
     .workflow-name {
@@ -83,12 +87,20 @@
       color: #8fd3ff;
       font-weight: 600;
       margin-bottom: 2px;
+      text-decoration: none;
     }
 
     .workflow-status {
       display: inline-block;
       font-weight: 700;
       margin-right: 10px;
+      text-decoration: none;
+    }
+
+    .time {
+      color: #d9d9d9;
+      white-space: nowrap;
+      text-decoration: none;
     }
 
     .success {
@@ -111,13 +123,8 @@
       margin-right: 6px;
     }
 
-    .time {
-      color: #d9d9d9;
-      white-space: nowrap;
-    }
-
     .footer {
-      max-width: 1400px;
+      max-width: 1600px;
       margin: 14px auto 0 auto;
       font-size: 12px;
       color: #cfcfcf;
@@ -153,7 +160,9 @@
           
           <td>
             
-            <span class="workflow-status failure">failure</span>
+            <a class="workflow-status failure" href="" target="_blank">
+              failure
+            </a>
             <a class="time" href="" target="_blank">03:18<br>04/06/26</a>
           </td>
           
@@ -162,7 +171,9 @@
 
           
           <td>
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">03:23<br>04/06/26</a>
           </td>
           
@@ -170,7 +181,9 @@
           
           <td>
             
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">15:29<br>03/27/26</a>
           </td>
           
@@ -186,7 +199,9 @@
           
           <td>
             
-            <span class="workflow-status not yet run">not yet run</span>
+            <a class="workflow-status not yet run" href="" target="_blank">
+              not yet run
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -195,7 +210,9 @@
 
           
           <td>
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -203,7 +220,9 @@
           
           <td>
             
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">23:55<br>03/30/26</a>
           </td>
           
@@ -219,7 +238,9 @@
           
           <td>
             
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">03:14<br>04/06/26</a>
           </td>
           
@@ -228,7 +249,9 @@
 
           
           <td>
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -236,7 +259,9 @@
           
           <td>
             
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">04:15<br>04/06/26</a>
           </td>
           
@@ -252,7 +277,9 @@
           
           <td>
             
-            <span class="workflow-status not yet run">not yet run</span>
+            <a class="workflow-status not yet run" href="" target="_blank">
+              not yet run
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -261,7 +288,9 @@
 
           
           <td>
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -269,7 +298,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">19:48<br>03/17/26</a>
           </td>
           
@@ -285,7 +316,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">02:54<br>10/13/25</a>
           </td>
           
@@ -294,7 +327,9 @@
 
           
           <td>
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -302,7 +337,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">12:03<br>02/18/26</a>
           </td>
           
@@ -318,7 +355,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status failure">failure</span>
+            <a class="workflow-status failure" href="" target="_blank">
+              failure
+            </a>
             <a class="time" href="" target="_blank">01:52<br>11/15/25</a>
           </td>
           
@@ -327,7 +366,9 @@
 
           
           <td>
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -335,7 +376,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status failure">failure</span>
+            <a class="workflow-status failure" href="" target="_blank">
+              failure
+            </a>
             <a class="time" href="" target="_blank">12:02<br>02/18/26</a>
           </td>
           
@@ -351,7 +394,9 @@
           
           <td>
             
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">03:13<br>04/06/26</a>
           </td>
           
@@ -360,7 +405,9 @@
 
           
           <td>
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -368,7 +415,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">16:54<br>03/18/26</a>
           </td>
           
@@ -384,7 +433,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">02:54<br>10/19/25</a>
           </td>
           
@@ -393,7 +444,9 @@
 
           
           <td>
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -401,7 +454,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status failure">failure</span>
+            <a class="workflow-status failure" href="" target="_blank">
+              failure
+            </a>
             <a class="time" href="" target="_blank">12:00<br>02/18/26</a>
           </td>
           
@@ -417,7 +472,9 @@
           
           <td>
             
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">03:28<br>04/06/26</a>
           </td>
           
@@ -426,7 +483,9 @@
 
           
           <td>
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -434,7 +493,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">20:38<br>03/18/26</a>
           </td>
           
@@ -450,7 +511,9 @@
           
           <td>
             
-            <span class="workflow-status not yet run">not yet run</span>
+            <a class="workflow-status not yet run" href="" target="_blank">
+              not yet run
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -459,7 +522,9 @@
 
           
           <td>
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -467,7 +532,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">20:12<br>03/17/26</a>
           </td>
           
@@ -483,7 +550,9 @@
           
           <td>
             
-            <span class="workflow-status not yet run">not yet run</span>
+            <a class="workflow-status not yet run" href="" target="_blank">
+              not yet run
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -492,7 +561,9 @@
 
           
           <td>
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -500,7 +571,9 @@
           
           <td>
             
-            <span class="workflow-status not yet run">not yet run</span>
+            <a class="workflow-status not yet run" href="" target="_blank">
+              not yet run
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -516,7 +589,9 @@
           
           <td>
             
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -525,7 +600,9 @@
 
           
           <td>
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">10:45<br>04/06/26</a>
           </td>
           
@@ -533,7 +610,9 @@
           
           <td>
             
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -549,7 +628,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">02:54<br>09/30/25</a>
           </td>
           
@@ -558,7 +639,9 @@
 
           
           <td>
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -566,7 +649,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">17:32<br>02/26/26</a>
           </td>
           
@@ -582,7 +667,9 @@
           
           <td>
             
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -591,7 +678,9 @@
 
           
           <td>
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -599,7 +688,9 @@
           
           <td>
             
-            <span class="workflow-status not yet run">not yet run</span>
+            <a class="workflow-status not yet run" href="" target="_blank">
+              not yet run
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -615,7 +706,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">01:52<br>11/15/25</a>
           </td>
           
@@ -624,7 +717,9 @@
 
           
           <td>
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -632,7 +727,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">14:04<br>03/19/26</a>
           </td>
           
@@ -648,7 +745,9 @@
           
           <td>
             
-            <span class="workflow-status not yet run">not yet run</span>
+            <a class="workflow-status not yet run" href="" target="_blank">
+              not yet run
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -657,7 +756,9 @@
 
           
           <td>
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -665,7 +766,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">18:30<br>03/18/26</a>
           </td>
           
@@ -681,7 +784,9 @@
           
           <td>
             
-            <span class="workflow-status not yet run">not yet run</span>
+            <a class="workflow-status not yet run" href="" target="_blank">
+              not yet run
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -690,7 +795,9 @@
 
           
           <td>
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -698,7 +805,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status failure">failure</span>
+            <a class="workflow-status failure" href="" target="_blank">
+              failure
+            </a>
             <a class="time" href="" target="_blank">18:02<br>03/19/26</a>
           </td>
           
@@ -714,7 +823,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status failure">failure</span>
+            <a class="workflow-status failure" href="" target="_blank">
+              failure
+            </a>
             <a class="time" href="" target="_blank">02:51<br>05/16/25</a>
           </td>
           
@@ -723,7 +834,9 @@
 
           
           <td>
-            <span class="workflow-status "></span>
+            <a class="workflow-status " href="" target="_blank">
+              
+            </a>
             <a class="time" href="" target="_blank"></a>
           </td>
           
@@ -731,7 +844,9 @@
           
           <td>
             <span class="stale">stale</span>
-            <span class="workflow-status success">success</span>
+            <a class="workflow-status success" href="" target="_blank">
+              success
+            </a>
             <a class="time" href="" target="_blank">11:55<br>02/06/26</a>
           </td>
           
@@ -744,7 +859,7 @@
   </div>
 
   <div class="footer">
-    Last Updated 22:39 April 06, 2026 (US-NYC) |
+    Last Updated 22:41 April 06, 2026 (US-NYC) |
     <a href="lf-workflow-dash">dashboard repo</a>
     
   </div>
