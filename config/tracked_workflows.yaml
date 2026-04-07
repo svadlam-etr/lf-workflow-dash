@@ -165,47 +165,47 @@ repos:
   - repo: int-common-framework-logger
     owner: EntergyCloud
     other_workflows:
-      - build-deploy.yml
+      - Build & Publish-logger.yml
 
   - repo: int-common-framework-httpconnection
     owner: EntergyCloud
     other_workflows:
-      - build-deploy.yml
+      - Build & Publish-logger.yml
 
   - repo: int-customersys-ccs-sapconnection
     owner: EntergyCloud
     other_workflows:
-      - build-deploy.yml
+      - Build & Publish-logger.yml
 
   - repo: int-common-framework-jmsconnection
     owner: EntergyCloud
     other_workflows:
-      - build-deploy.yml
+      - Build & Publish-logger.yml
 
   - repo: int-common-framework-security
     owner: EntergyCloud
     other_workflows:
-      - build-deploy.yml
+      - Build & Publish-logger.yml
 
   - repo: int-customersys-ccs-masterdata
     owner: EntergyCloud
     other_workflows:
-      - build-deploy.yml
+      - Build & Publish-logger.yml
 
   - repo: int-enterprise-common-customerinfo
     owner: EntergyCloud
     other_workflows:
-      - build-deploy.yml
+      - Build & Publish-logger.yml
 
   - repo: int-hr.common-employee
     owner: EntergyCloud
     other_workflows:
-      - build-deploy.yml
+      - Build & Publish-logger.yml
 
   - repo: int-customersys.salesforce.sfmcconnection
     owner: EntergyCloud
     other_workflows:
-      - build-deploy.yml
+      - Build & Publish-logger.yml
 
   
 extra_links: []
