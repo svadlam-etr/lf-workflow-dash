@@ -2,97 +2,209 @@ page_title: LF Builds
 copier_project: lincc-frameworks/python-project-template
 
 repos:  
-  - repo: asv-formatter
-    owner: lincc-frameworks
-    smoke-test: smoke-test.yml
-    live-build: testing-and-coverage.yml
+  - repo: int-customersys-ccs-accountBilling-app
+    owner: EntergyCloud
+    other_workflows:
+	  - build-deploy.yml
+  - repo: int-customerSys-ccs-accounts-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
 
-  - repo: citation-compass
-    owner: lincc-frameworks
-    smoke-test: smoke-test.yml
-    benchmarks: asv-nightly.yml
-    live-build: testing-and-coverage.yml
+  - repo: int-customersys-ccs-billingcorrection-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
 
-  - repo: hats
-    owner: astronomy-commons
-    smoke-test: smoke-test.yml
-    benchmarks: asv-nightly.yml
-    live-build: testing-and-coverage.yml
+  - repo: int-customerSys-ccs-billUsage-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
 
-  - repo: hats-cloudtests
-    owner: astronomy-commons
-    smoke-test: smoke-test.yml
-    benchmarks: asv-nightly.yml
-    live-build: testing-and-coverage.yml
+  - repo: int-customersys-ccs-bpemCase-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
 
-  - repo: hats-import
-    owner: astronomy-commons
-    smoke-test: smoke-test.yml
-    live-build: testing-and-coverage.yml
+  - repo: int-customerSys-ccs-businessPartner-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
 
-  - repo: hyrax
-    owner: lincc-frameworks
-    smoke-test: smoke-test.yml
-    build-docs: build-documentation.yml
-    benchmarks: asv-nightly.yml
-    live-build: testing-and-coverage.yml
+  - repo: int-customer-ccs-calculatedDeterminant-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
 
-  - repo: kbmod
-    owner: dirac-institute
-    smoke-test: canary_builds.yaml
-    build-docs: build_docs.yaml
-    live-build: pr_tests.yaml
+  - repo: int-customerSys-ccs-contact-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customerSys-ccs-contractAccount-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customerSys-ccs-contractAccountManagement-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customersys-ccs-customerContact-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customersys-ccs-customerOffHoursPaymentInfo-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customerSys-ccs-custPaymentInfo-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customersys-ccs-disconnectNotice-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customerSys-ccs-drivingDirections-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customerSys-ccs-payments-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customerSys-ccs-premise-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customerSys-ccs-programs-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customer-ccs-quantityDeterminant-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customerSys-ccs-realTimePayments-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customer-ccs-rpcAccounts-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customerSys-ccs-serviceInitiation-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customerSys-ccs-serviceNotification-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customersys-ccs-streetlightbilling-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-CustomerSys-CCS-SyncMeterGasIMU-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customersys-ccs-user-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customerSys-ccs-workOrderManagement-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customersys-tmd-deliveryAddress-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customersys-grc-employee-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customerSys-ccs-partnerAccountData-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customersys-ccs-billProjection-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customerSys-salesforce-sms-app
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-common-framework-logger
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-common-framework-httpconnection
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customersys-ccs-sapconnection
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-common-framework-jmsconnection
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-common-framework-security
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customersys-ccs-masterdata
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-enterprise-common-customerinfo
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-hr.common-employee
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
+  - repo: int-customersys.salesforce.sfmcconnection
+    owner: EntergyCloud
+    other_workflows:
+      - build-deploy.yml
+
   
-  - repo: koffi
-    owner: lincc-frameworks
-    smoke-test: smoke-test.yml
-    live-build: testing-and-coverage.yml
-  
-  - repo: lf-workflow-dash
-    owner: lincc-frameworks
-    smoke-test: smoke-test.yml
-    live-build: testing-and-coverage.yml
-    other_workflows: 
-      - main.yml
-
-  - repo: lsdb
-    owner: astronomy-commons
-    smoke-test: smoke-test.yml
-    benchmarks: asv-nightly.yml
-    live-build: testing-and-coverage.yml
-      
-  - repo: nested-pandas
-    owner: lincc-frameworks
-    smoke-test: smoke-test.yml
-    build-docs: build-documentation.yml
-    benchmarks: asv-nightly.yml
-    live-build: testing-and-coverage.yml
-      
-  - repo: python-project-template
-    owner: lincc-frameworks
-    live-build: ci.yml
-    smoke-test: smoke-test.yml
-  
-  - repo: pre-commit-hooks
-    owner: lincc-frameworks
-    live-build: testing-and-coverage.yml
-    smoke-test: smoke-test.yml
-
-  - repo: lightcurvelynx
-    owner: lincc-frameworks
-    smoke-test: smoke-test.yml
-    benchmarks: asv-nightly.yml
-    live-build: testing-and-coverage.yml
-
-  - repo: uncle-val
-    owner: lincc-frameworks
-    smoke-test: smoke-test.yml
-    live-build: testing-and-coverage.yml
-  
-extra_links: 
-  - text: LSDB Dash
-    url: https://lincc-frameworks.github.io/lf-workflow-dash/lsdb.html
-  - text: RAIL Dash
-    url: https://lincc-frameworks.github.io/lf-workflow-dash/rail.html
-  - text: Incubator Dash
-    url: https://lincc-frameworks.github.io/lf-workflow-dash/incubator.html
+extra_links: []
