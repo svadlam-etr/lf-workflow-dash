@@ -1,442 +1,508 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>LSDB Builds</title>
-        <link rel="icon" type="image/x-icon" href="img/favicon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/styles.css">
-        <script>
-        setTimeout(function(){
-            window.location.reload();
-        }, 60000);
-        </script>
-    </head>
-    <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LSDB Builds</title>
+  <style>
+    body {
+      background: #1f1f1f;
+      color: #e8e8e8;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 18px;
+    }
+
+    h1 {
+      margin: 0 0 14px 0;
+      font-size: 24px;
+      color: #f3f3f3;
+    }
+
+    .table-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto;
+      background: #2a2a2a;
+    }
+
+    th, td {
+      padding: 6px 10px;
+      font-size: 13px;
+      line-height: 1.2;
+      vertical-align: middle;
+      border-bottom: 1px solid #444;
+      text-align: left;
+    }
+
+    th {
+      background: #202020;
+      color: #f2f2f2;
+      font-weight: 700;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    tr:nth-child(even) td {
+      background: #303030;
+    }
+
+    a {
+      color: #8fd3ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .repo-col {
+      width: 28%;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    .status-col {
+      width: 22%;
+      white-space: nowrap;
+    }
+
+    .workflow-block {
+      margin: 0;
+      padding: 0;
+    }
+
+    .workflow-name {
+      display: block;
+      color: #8fd3ff;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .workflow-status {
+      display: inline-block;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    .success {
+      color: #8ee26b;
+    }
+
+    .failure,
+    .failed,
+    .error {
+      color: #ff7b7b;
+    }
+
+    .cancelled {
+      color: #ffbf66;
+    }
+
+    .stale {
+      color: #ffbf66;
+      font-style: italic;
+      margin-right: 6px;
+    }
+
+    .time {
+      color: #d9d9d9;
+      white-space: nowrap;
+    }
+
+    .footer {
+      max-width: 1400px;
+      margin: 14px auto 0 auto;
+      font-size: 12px;
+      color: #cfcfcf;
+    }
+
+    .footer a {
+      color: #8fd3ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="table-wrap">
+    <h1>LSDB Builds</h1>
+
     <table>
+      <thead>
         <tr>
-            <th colspan="1" scope="colgroup" style="width:150px">Repository</th>
-            <th colspan="3" scope="colgroup">Nightly Test</th>
-            <th colspan="3" scope="colgroup">Nightly<br>Benchmarks</th>
-            <th colspan="3" scope="colgroup">Live Build</th>
-            <th colspan="1" scope="colgroup">Workflow-Status</th>
+          <th class="repo-col">Repository</th>
+          <th>Nightly Test</th>
+          <th>Nightly Benchmarks</th>
+          
+          <th>Live Build</th>
+          <th class="status-col">Workflow-Status</th>
         </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td class="repo-col">
+            <a href="https://github.com/astronomy-commons/hats" target="_blank">hats</a>
+          </td>
 
-    
-    <tr>
-        <td><a href="https://github.com/astronomy-commons/hats">hats</a></td>
-        <!-- Smoke Test -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/hats/actions/workflows/smoke-test.yml">
-                03:13<br>04/06/26
-            </a>
-        </td>
-        <!-- Benchmarks -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/hats/actions/workflows/asv-nightly.yml">
-                03:12<br>04/06/26
-            </a>
-        </td>
-        <!-- Live Build -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/hats/actions/workflows/testing-and-coverage.yml">
-                19:21<br>04/06/26
-            </a>
-        </td>
-        <!-- Other -->
-        <td>
+          
+          <td>
             
-        </td>
-    </tr>
-    
-    <tr>
-        <td><a href="https://github.com/astronomy-commons/hats-cloudtests">hats-cloudtests</a></td>
-        <!-- Smoke Test -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/hats-cloudtests/actions/workflows/smoke-test.yml">
-                03:17<br>04/06/26
-            </a>
-        </td>
-        <!-- Benchmarks -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/hats-cloudtests/actions/workflows/asv-nightly.yml">
-                03:13<br>04/06/26
-            </a>
-        </td>
-        <!-- Live Build -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/hats-cloudtests/actions/workflows/testing-and-coverage.yml">
-                10:25<br>04/02/26
-            </a>
-        </td>
-        <!-- Other -->
-        <td>
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">03:13<br>04/06/26</a>
+          </td>
+          
+
+          
+          <td>
             
-        </td>
-    </tr>
-    
-    <tr>
-        <td><a href="https://github.com/astronomy-commons/hats-import">hats-import</a></td>
-        <!-- Smoke Test -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/hats-import/actions/workflows/smoke-test.yml">
-                03:13<br>04/06/26
-            </a>
-        </td>
-        <!-- Benchmarks -->
-        <td class=" align-right">
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">03:12<br>04/06/26</a>
+          </td>
+          
+
+          
+
+          
+          <td>
             
-        </td>
-        <td class=" align-center">
-            <i class=""></i>
-        </td>
-        <td class="">
-            <a href="">
-                
-            </a>
-        </td>
-        <!-- Live Build -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/hats-import/actions/workflows/testing-and-coverage.yml">
-                11:00<br>04/01/26
-            </a>
-        </td>
-        <!-- Other -->
-        <td>
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">19:21<br>04/06/26</a>
+          </td>
+          
+
+          
+          <td class="status-col">
             
-        </td>
-    </tr>
-    
-    <tr>
-        <td><a href="https://github.com/astronomy-commons/hats-tap">hats-tap</a></td>
-        <!-- Smoke Test -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/hats-tap/actions/workflows/smoke-test.yml">
-                03:13<br>04/06/26
-            </a>
-        </td>
-        <!-- Benchmarks -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/hats-tap/actions/workflows/asv-nightly.yml">
-                03:13<br>04/06/26
-            </a>
-        </td>
-        <!-- Live Build -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/hats-tap/actions/workflows/testing-and-coverage.yml">
-                10:34<br>04/01/26
-            </a>
-        </td>
-        <!-- Other -->
-        <td>
+          </td>
+          
+        </tr>
+        
+        <tr>
+          <td class="repo-col">
+            <a href="https://github.com/astronomy-commons/hats-cloudtests" target="_blank">hats-cloudtests</a>
+          </td>
+
+          
+          <td>
             
-        </td>
-    </tr>
-    
-    <tr>
-        <td><a href="https://github.com/astronomy-commons/lsdb">lsdb</a></td>
-        <!-- Smoke Test -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/lsdb/actions/workflows/smoke-test.yml">
-                03:20<br>04/06/26
-            </a>
-        </td>
-        <!-- Benchmarks -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/lsdb/actions/workflows/asv-nightly.yml">
-                03:22<br>04/06/26
-            </a>
-        </td>
-        <!-- Live Build -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/lsdb/actions/workflows/testing-and-coverage.yml">
-                10:16<br>04/02/26
-            </a>
-        </td>
-        <!-- Other -->
-        <td>
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">03:17<br>04/06/26</a>
+          </td>
+          
+
+          
+          <td>
             
-        </td>
-    </tr>
-    
-    <tr>
-        <td><a href="https://github.com/astronomy-commons/lsdb-crossmatch">lsdb-crossmatch</a></td>
-        <!-- Smoke Test -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/lsdb-crossmatch/actions/workflows/smoke-test.yml">
-                03:13<br>04/06/26
-            </a>
-        </td>
-        <!-- Benchmarks -->
-        <td class=" align-right">
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">03:13<br>04/06/26</a>
+          </td>
+          
+
+          
+
+          
+          <td>
             
-        </td>
-        <td class=" align-center">
-            <i class=""></i>
-        </td>
-        <td class="">
-            <a href="">
-                
-            </a>
-        </td>
-        <!-- Live Build -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/lsdb-crossmatch/actions/workflows/testing-and-coverage.yml">
-                10:22<br>04/02/26
-            </a>
-        </td>
-        <!-- Other -->
-        <td>
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">10:25<br>04/02/26</a>
+          </td>
+          
+
+          
+          <td class="status-col">
             
-        </td>
-    </tr>
-    
-    <tr>
-        <td><a href="https://github.com/astronomy-commons/lsdb-rubin">lsdb-rubin</a></td>
-        <!-- Smoke Test -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/lsdb-rubin/actions/workflows/smoke-test.yml">
-                03:13<br>04/06/26
-            </a>
-        </td>
-        <!-- Benchmarks -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/lsdb-rubin/actions/workflows/asv-nightly.yml">
-                03:12<br>04/06/26
-            </a>
-        </td>
-        <!-- Live Build -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/astronomy-commons/lsdb-rubin/actions/workflows/testing-and-coverage.yml">
-                10:09<br>04/02/26
-            </a>
-        </td>
-        <!-- Other -->
-        <td>
+          </td>
+          
+        </tr>
+        
+        <tr>
+          <td class="repo-col">
+            <a href="https://github.com/astronomy-commons/hats-import" target="_blank">hats-import</a>
+          </td>
+
+          
+          <td>
             
-                <a href="https://github.com/astronomy-commons/lsdb-rubin/actions/workflows/smoke_test_conda.yml">Create Rubin environment from conda</a>
-                <br/>
-                <div class="red-cell inline">failure <i class="fa fa-times-circle"></i></div>
-                <div class="inline"><a href="https://github.com/astronomy-commons/lsdb-rubin/actions/workflows/smoke_test_conda.yml">03:29 04/06/26</a></div>
-                <br/>
-            </a>
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">03:13<br>04/06/26</a>
+          </td>
+          
+
+          
+          <td>
             
-        </td>
-    </tr>
-    
-    <tr>
-        <td><a href="https://github.com/astronomy-commons/lsdb-server">lsdb-server</a></td>
-        <!-- Smoke Test -->
-        <td class=" align-right">
+            <span class="workflow-status "></span>
+            <a class="time" href="" target="_blank"></a>
+          </td>
+          
+
+          
+
+          
+          <td>
             
-        </td>
-        <td class=" align-center">
-            <i class=""></i>
-        </td>
-        <td class="">
-            <a href="">
-                
-            </a>
-        </td>
-        <!-- Benchmarks -->
-        <td class=" align-right">
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">11:00<br>04/01/26</a>
+          </td>
+          
+
+          
+          <td class="status-col">
             
-        </td>
-        <td class=" align-center">
-            <i class=""></i>
-        </td>
-        <td class="">
-            <a href="">
-                
-            </a>
-        </td>
-        <!-- Live Build -->
-        <td class="red-cell align-right">
-            <span class="gray-cell">stale</span><br/>
-            failure
-        </td>
-        <td class="red-cell align-center">
-            <i class="gray-cell fa fa-clock-o"></i><br/>
-            <i class="fa fa-times-circle"></i>
-        </td>
-        <td class="red-cell">
-            <a href="https://github.com/astronomy-commons/lsdb-server/actions/workflows/build.yml">
-                08:31<br>03/05/25
-            </a>
-        </td>
-        <!-- Other -->
-        <td>
+          </td>
+          
+        </tr>
+        
+        <tr>
+          <td class="repo-col">
+            <a href="https://github.com/astronomy-commons/hats-tap" target="_blank">hats-tap</a>
+          </td>
+
+          
+          <td>
             
-        </td>
-    </tr>
-    
-    <tr>
-        <td><a href="https://github.com/lincc-frameworks/nested-pandas">nested-pandas</a></td>
-        <!-- Smoke Test -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/lincc-frameworks/nested-pandas/actions/workflows/smoke-test.yml">
-                04:13<br>04/06/26
-            </a>
-        </td>
-        <!-- Benchmarks -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/lincc-frameworks/nested-pandas/actions/workflows/asv-nightly.yml">
-                04:15<br>04/06/26
-            </a>
-        </td>
-        <!-- Live Build -->
-        <td class="green-cell align-right">
-            success
-        </td>
-        <td class="green-cell align-center">
-            <i class="fa fa-check-circle"></i>
-        </td>
-        <td class="green-cell">
-            <a href="https://github.com/lincc-frameworks/nested-pandas/actions/workflows/testing-and-coverage.yml">
-                10:58<br>04/01/26
-            </a>
-        </td>
-        <!-- Other -->
-        <td>
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">03:13<br>04/06/26</a>
+          </td>
+          
+
+          
+          <td>
             
-        </td>
-    </tr>
-    
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">03:13<br>04/06/26</a>
+          </td>
+          
+
+          
+
+          
+          <td>
+            
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">10:34<br>04/01/26</a>
+          </td>
+          
+
+          
+          <td class="status-col">
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          <td class="repo-col">
+            <a href="https://github.com/astronomy-commons/lsdb" target="_blank">lsdb</a>
+          </td>
+
+          
+          <td>
+            
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">03:20<br>04/06/26</a>
+          </td>
+          
+
+          
+          <td>
+            
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">03:22<br>04/06/26</a>
+          </td>
+          
+
+          
+
+          
+          <td>
+            
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">10:16<br>04/02/26</a>
+          </td>
+          
+
+          
+          <td class="status-col">
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          <td class="repo-col">
+            <a href="https://github.com/astronomy-commons/lsdb-crossmatch" target="_blank">lsdb-crossmatch</a>
+          </td>
+
+          
+          <td>
+            
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">03:13<br>04/06/26</a>
+          </td>
+          
+
+          
+          <td>
+            
+            <span class="workflow-status "></span>
+            <a class="time" href="" target="_blank"></a>
+          </td>
+          
+
+          
+
+          
+          <td>
+            
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">10:22<br>04/02/26</a>
+          </td>
+          
+
+          
+          <td class="status-col">
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          <td class="repo-col">
+            <a href="https://github.com/astronomy-commons/lsdb-rubin" target="_blank">lsdb-rubin</a>
+          </td>
+
+          
+          <td>
+            
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">03:13<br>04/06/26</a>
+          </td>
+          
+
+          
+          <td>
+            
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">03:12<br>04/06/26</a>
+          </td>
+          
+
+          
+
+          
+          <td>
+            
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">10:09<br>04/02/26</a>
+          </td>
+          
+
+          
+          <td class="status-col">
+            
+              <div class="workflow-block">
+                <span class="workflow-name">Create Rubin environment from conda</span>
+                <span class="workflow-status failure">failure</span>
+                <a class="time" href="" target="_blank">03:29 04/06/26</a>
+              </div>
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          <td class="repo-col">
+            <a href="https://github.com/astronomy-commons/lsdb-server" target="_blank">lsdb-server</a>
+          </td>
+
+          
+          <td>
+            
+            <span class="workflow-status "></span>
+            <a class="time" href="" target="_blank"></a>
+          </td>
+          
+
+          
+          <td>
+            
+            <span class="workflow-status "></span>
+            <a class="time" href="" target="_blank"></a>
+          </td>
+          
+
+          
+
+          
+          <td>
+            <span class="stale">stale</span>
+            <span class="workflow-status failure">failure</span>
+            <a class="time" href="" target="_blank">08:31<br>03/05/25</a>
+          </td>
+          
+
+          
+          <td class="status-col">
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          <td class="repo-col">
+            <a href="https://github.com/lincc-frameworks/nested-pandas" target="_blank">nested-pandas</a>
+          </td>
+
+          
+          <td>
+            
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">04:13<br>04/06/26</a>
+          </td>
+          
+
+          
+          <td>
+            
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">04:15<br>04/06/26</a>
+          </td>
+          
+
+          
+
+          
+          <td>
+            
+            <span class="workflow-status success">success</span>
+            <a class="time" href="" target="_blank">10:58<br>04/01/26</a>
+          </td>
+          
+
+          
+          <td class="status-col">
+            
+          </td>
+          
+        </tr>
+        
+      </tbody>
     </table>
+  </div>
 
-    <p>
-        Last Updated 22:04 April 06, 2026 (US-NYC) | 
-        <a href='https://github.com/lincc-frameworks/lf-workflow-dash'><i class=\"fa fa-github\"></i> lf-workflow-dash</a>
-        
-        | <a href='https://lincc-frameworks.github.io/lf-workflow-dash/'><i class=\"fa fa-github\"></i> LINCC Frameworks Dash</a>
-        
-    </p>
-
-    </body>
+  <div class="footer">
+    Last Updated 22:20 April 06, 2026 (US-NYC) |
+    <a href="lf-workflow-dash">dashboard repo</a>
+    
+      | <a href="https://lincc-frameworks.github.io/lf-workflow-dash/">LINCC Frameworks Dash</a>
+    
+  </div>
+</body>
 </html>
