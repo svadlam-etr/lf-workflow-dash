@@ -1,145 +1,209 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>{{page_title}}</title>
-        <link rel="icon" type="image/x-icon" href="img/favicon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/styles.css">
-        <script>
-        setTimeout(function(){
-            window.location.reload();
-        }, 60000);
-        </script>
-    </head>
-    <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }}</title>
+  <style>
+    body {
+      background: #1f1f1f;
+      color: #e8e8e8;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 18px;
+    }
+
+    h1 {
+      margin: 0 0 14px 0;
+      font-size: 24px;
+      color: #f3f3f3;
+    }
+
+    .table-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto;
+      background: #2a2a2a;
+    }
+
+    th, td {
+      padding: 6px 10px;
+      font-size: 13px;
+      line-height: 1.2;
+      vertical-align: middle;
+      border-bottom: 1px solid #444;
+      text-align: left;
+    }
+
+    th {
+      background: #202020;
+      color: #f2f2f2;
+      font-weight: 700;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    tr:nth-child(even) td {
+      background: #303030;
+    }
+
+    a {
+      color: #8fd3ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .repo-col {
+      width: 28%;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    .status-col {
+      width: 22%;
+      white-space: nowrap;
+    }
+
+    .workflow-block {
+      margin: 0;
+      padding: 0;
+    }
+
+    .workflow-name {
+      display: block;
+      color: #8fd3ff;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .workflow-status {
+      display: inline-block;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    .success {
+      color: #8ee26b;
+    }
+
+    .failure,
+    .failed,
+    .error {
+      color: #ff7b7b;
+    }
+
+    .cancelled {
+      color: #ffbf66;
+    }
+
+    .stale {
+      color: #ffbf66;
+      font-style: italic;
+      margin-right: 6px;
+    }
+
+    .time {
+      color: #d9d9d9;
+      white-space: nowrap;
+    }
+
+    .footer {
+      max-width: 1400px;
+      margin: 14px auto 0 auto;
+      font-size: 12px;
+      color: #cfcfcf;
+    }
+
+    .footer a {
+      color: #8fd3ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="table-wrap">
+    <h1>{{ page_title }}</h1>
+
     <table>
+      <thead>
         <tr>
-            <th colspan="1" scope="colgroup" style="width:150px">Repository</th>
-            
-            {%- if contains_smoke %}
-            <th colspan="3" scope="colgroup">Nightly Test</th>
-            {%- endif %}
-            {%- if contains_bench %}
-            <th colspan="3" scope="colgroup">Nightly<br>Benchmarks</th>
-            {%- endif %}
-            {%- if contains_docs %}
-            <th colspan="3" scope="colgroup">Build Docs</th>
-            {%- endif %}
-            {%- if contains_live %}
-            <th colspan="3" scope="colgroup">Live Build</th>
-            {%- endif %}
-            {%- if contains_other %}
-            <th colspan="1" scope="colgroup">Workflow-Status</th>
-            {%- endif %}
+          <th class="repo-col">Repository</th>
+          {% if contains_smoke %}<th>Nightly Test</th>{% endif %}
+          {% if contains_bench %}<th>Nightly Benchmarks</th>{% endif %}
+          {% if contains_docs %}<th>Build Docs</th>{% endif %}
+          {% if contains_live %}<th>Live Build</th>{% endif %}
+          {% if contains_other %}<th class="status-col">Workflow-Status</th>{% endif %}
         </tr>
+      </thead>
+      <tbody>
+        {% for project in all_projects %}
+        <tr>
+          <td class="repo-col">
+            <a href="https://github.com/{{ project.owner }}/{{ project.repo }}" target="_blank">{{ project.repo }}</a>
+          </td>
 
-    {% for project in all_projects %}
-    <tr>
-        <td><a href="{{project.repo_url}}">{{project.repo}}</a></td>
+          {% if contains_smoke %}
+          <td>
+            {% if project.smoke_test.is_stale %}<span class="stale">stale</span>{% endif %}
+            <span class="workflow-status {{ project.smoke_test.workflow_status|lower }}">{{ project.smoke_test.workflow_status }}</span>
+            <a class="time" href="{{ project.smoke_test.url }}" target="_blank">{{ project.smoke_test.conclusion_time }}</a>
+          </td>
+          {% endif %}
 
-        {%- if contains_smoke %}
-        <!-- Smoke Test -->
-        <td class="{{project.smoke_test.display_class}} align-right">
-            {%- if project.smoke_test.is_stale %}
-            <span class="gray-cell">stale</span><br/>
-            {%- endif %}
-            {{project.smoke_test.workflow_status}}
-        </td>
-        <td class="{{project.smoke_test.display_class}} align-center">
-            {%- if project.smoke_test.is_stale %}
-            <i class="gray-cell fa fa-clock-o"></i><br/>
-            {%- endif %}
-            <i class="{{project.smoke_test.icon_class}}"></i>
-        </td>
-        <td class="{{project.smoke_test.display_class}}">
-            <a href="{{project.smoke_test.workflow_url}}">
-                {{project.smoke_test.conclusion_time}}
-            </a>
-        </td>
-        {%- endif %}
+          {% if contains_bench %}
+          <td>
+            {% if project.benchmarks.is_stale %}<span class="stale">stale</span>{% endif %}
+            <span class="workflow-status {{ project.benchmarks.workflow_status|lower }}">{{ project.benchmarks.workflow_status }}</span>
+            <a class="time" href="{{ project.benchmarks.url }}" target="_blank">{{ project.benchmarks.conclusion_time }}</a>
+          </td>
+          {% endif %}
 
-        {%- if contains_bench %}
-        <!-- Benchmarks -->
-        <td class="{{project.benchmarks.display_class}} align-right">
-            {%- if project.benchmarks.is_stale %}
-            <span class="gray-cell">stale</span><br/>
-            {%- endif %}
-            {{project.benchmarks.workflow_status}}
-        </td>
-        <td class="{{project.benchmarks.display_class}} align-center">
-            {%- if project.benchmarks.is_stale %}
-            <i class="gray-cell fa fa-clock-o"></i><br/>
-            {%- endif %}
-            <i class="{{project.benchmarks.icon_class}}"></i>
-        </td>
-        <td class="{{project.benchmarks.display_class}}">
-            <a href="{{project.benchmarks.workflow_url}}">
-                {{project.benchmarks.conclusion_time}}
-            </a>
-        </td>
-        {%- endif %}
+          {% if contains_docs %}
+          <td>
+            <span class="workflow-status {{ project.build_docs.workflow_status|lower }}">{{ project.build_docs.workflow_status }}</span>
+            <a class="time" href="{{ project.build_docs.url }}" target="_blank">{{ project.build_docs.conclusion_time }}</a>
+          </td>
+          {% endif %}
 
-        {%- if contains_docs %}
-        <!-- Build Docs (don't worry about is_stale here) -->
-        <td class="{{project.build_docs.display_class}} align-right">
-            {{project.build_docs.workflow_status}}
-        </td>
-        <td class="{{project.build_docs.display_class}} align-center">
-            <i class="{{project.build_docs.icon_class}}"></i>
-        </td>
-        <td class="{{project.build_docs.display_class}}">
-            <a href="{{project.build_docs.workflow_url}}">
-                {{project.build_docs.conclusion_time}}
-            </a>
-        </td>
-        {%- endif %}
+          {% if contains_live %}
+          <td>
+            {% if project.live_build.is_stale %}<span class="stale">stale</span>{% endif %}
+            <span class="workflow-status {{ project.live_build.workflow_status|lower }}">{{ project.live_build.workflow_status }}</span>
+            <a class="time" href="{{ project.live_build.url }}" target="_blank">{{ project.live_build.conclusion_time }}</a>
+          </td>
+          {% endif %}
 
-        {%- if contains_live %}
-        <!-- Live Build -->
-        <td class="{{project.live_build.display_class}} align-right">
-            {%- if project.live_build.is_stale %}
-            <span class="gray-cell">stale</span><br/>
-            {%- endif %}
-            {{project.live_build.workflow_status}}
-        </td>
-        <td class="{{project.live_build.display_class}} align-center">
-            {%- if project.live_build.is_stale %}
-            <i class="gray-cell fa fa-clock-o"></i><br/>
-            {%- endif %}
-            <i class="{{project.live_build.icon_class}}"></i>
-        </td>
-        <td class="{{project.live_build.display_class}}">
-            <a href="{{project.live_build.workflow_url}}">
-                {{project.live_build.conclusion_time}}
-            </a>
-        </td>
-        {%- endif %}
-        
-        {%- if contains_other %}
-        <!-- Other -->
-        <td>
+          {% if contains_other %}
+          <td class="status-col">
             {% for workflow in project.other_workflows %}
-                <a href="{{workflow.workflow_url}}">{{workflow.friendly_name}}</a>
-                <br/>
-                <div class="{{workflow.display_class}} inline">{{workflow.workflow_status}} <i class="{{workflow.icon_class}}"></i></div>
-                <div class="inline"><a href="{{workflow.workflow_url}}">{{workflow.conclusion_time_one_line}}</a></div>
-                <br/>
-            </a>
+              <div class="workflow-block">
+                <span class="workflow-name">{{ workflow.friendly_name }}</span>
+                <span class="workflow-status {{ workflow.workflow_status|lower }}">{{ workflow.workflow_status }}</span>
+                <a class="time" href="{{ workflow.url }}" target="_blank">{{ workflow.conclusion_time_one_line }}</a>
+              </div>
             {% endfor %}
-        </td>
-        {%- endif %}
-    </tr>
-    {% endfor %}
-    </table>
-
-    <p>
-        Last Updated {{last_updated}} | 
-        <a href='https://github.com/lincc-frameworks/{{dash_repo}}'><i class=\"fa fa-github\"></i> {{dash_repo}}</a>
-        {% for link in extra_links %}
-        | <a href='{{link.url}}'><i class=\"fa fa-github\"></i> {{link.text}}</a>
+          </td>
+          {% endif %}
+        </tr>
         {% endfor %}
-    </p>
+      </tbody>
+    </table>
+  </div>
 
-    </body>
+  <div class="footer">
+    Last Updated {{ last_updated }} |
+    <a href="{{ dash_repo }}">dashboard repo</a>
+    {% for link in extra_links %}
+      | <a href="{{ link.url }}">{{ link.text }}</a>
+    {% endfor %}
+  </div>
+</body>
 </html>
