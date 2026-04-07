@@ -5,7 +5,8 @@ repos:
   - repo: int-customersys-ccs-accountBilling-app
     owner: EntergyCloud
     other_workflows:
-	  - build-deploy.yml
+      - build-deploy.yml
+  
   - repo: int-customerSys-ccs-accounts-app
     owner: EntergyCloud
     other_workflows:
