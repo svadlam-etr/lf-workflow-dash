@@ -159,54 +159,74 @@
 
           {% if contains_smoke %}
           <td>
-            {% if project.smoke_test.is_stale %}<span class="stale">stale</span>{% endif %}
-            <a class="workflow-status {{ project.smoke_test.workflow_status|lower }}" href="{{ project.smoke_test.url }}" target="_blank">
-              {{ project.smoke_test.workflow_status }}
-            </a>
-            <a class="time" href="{{ project.smoke_test.url }}" target="_blank">{{ project.smoke_test.conclusion_time }}</a>
+            {% if project.smoke_test and project.smoke_test.is_stale %}<span class="stale">stale</span>{% endif %}
+            {% if project.smoke_test %}
+              <a class="workflow-status {{ project.smoke_test.workflow_status|lower }}" href="{{ project.smoke_test.workflow_url }}" target="_blank">
+                {{ project.smoke_test.workflow_status }}
+              </a>
+              <a class="time" href="{{ project.smoke_test.workflow_url }}" target="_blank">{{ project.smoke_test.conclusion_time }}</a>
+            {% else %}
+              not yet run
+            {% endif %}
           </td>
           {% endif %}
 
           {% if contains_bench %}
           <td>
-            {% if project.benchmarks.is_stale %}<span class="stale">stale</span>{% endif %}
-            <a class="workflow-status {{ project.benchmarks.workflow_status|lower }}" href="{{ project.benchmarks.url }}" target="_blank">
-              {{ project.benchmarks.workflow_status }}
-            </a>
-            <a class="time" href="{{ project.benchmarks.url }}" target="_blank">{{ project.benchmarks.conclusion_time }}</a>
+            {% if project.benchmarks and project.benchmarks.is_stale %}<span class="stale">stale</span>{% endif %}
+            {% if project.benchmarks %}
+              <a class="workflow-status {{ project.benchmarks.workflow_status|lower }}" href="{{ project.benchmarks.workflow_url }}" target="_blank">
+                {{ project.benchmarks.workflow_status }}
+              </a>
+              <a class="time" href="{{ project.benchmarks.workflow_url }}" target="_blank">{{ project.benchmarks.conclusion_time }}</a>
+            {% else %}
+              not yet run
+            {% endif %}
           </td>
           {% endif %}
 
           {% if contains_docs %}
           <td>
-            <a class="workflow-status {{ project.build_docs.workflow_status|lower }}" href="{{ project.build_docs.url }}" target="_blank">
-              {{ project.build_docs.workflow_status }}
-            </a>
-            <a class="time" href="{{ project.build_docs.url }}" target="_blank">{{ project.build_docs.conclusion_time }}</a>
+            {% if project.build_docs %}
+              <a class="workflow-status {{ project.build_docs.workflow_status|lower }}" href="{{ project.build_docs.workflow_url }}" target="_blank">
+                {{ project.build_docs.workflow_status }}
+              </a>
+              <a class="time" href="{{ project.build_docs.workflow_url }}" target="_blank">{{ project.build_docs.conclusion_time }}</a>
+            {% else %}
+              not yet run
+            {% endif %}
           </td>
           {% endif %}
 
           {% if contains_live %}
           <td>
-            {% if project.live_build.is_stale %}<span class="stale">stale</span>{% endif %}
-            <a class="workflow-status {{ project.live_build.workflow_status|lower }}" href="{{ project.live_build.url }}" target="_blank">
-              {{ project.live_build.workflow_status }}
-            </a>
-            <a class="time" href="{{ project.live_build.url }}" target="_blank">{{ project.live_build.conclusion_time }}</a>
+            {% if project.live_build and project.live_build.is_stale %}<span class="stale">stale</span>{% endif %}
+            {% if project.live_build %}
+              <a class="workflow-status {{ project.live_build.workflow_status|lower }}" href="{{ project.live_build.workflow_url }}" target="_blank">
+                {{ project.live_build.workflow_status }}
+              </a>
+              <a class="time" href="{{ project.live_build.workflow_url }}" target="_blank">{{ project.live_build.conclusion_time }}</a>
+            {% else %}
+              not yet run
+            {% endif %}
           </td>
           {% endif %}
 
           {% if contains_other %}
           <td class="status-col">
-            {% for workflow in project.other_workflows %}
-              <div class="workflow-block">
-                <a class="workflow-name" href="{{ workflow.url }}" target="_blank">{{ workflow.friendly_name }}</a>
-                <a class="workflow-status {{ workflow.workflow_status|lower }}" href="{{ workflow.url }}" target="_blank">
-                  {{ workflow.workflow_status }}
-                </a>
-                <a class="time" href="{{ workflow.url }}" target="_blank">{{ workflow.conclusion_time_one_line }}</a>
-              </div>
-            {% endfor %}
+            {% if project.other_workflows %}
+              {% for workflow in project.other_workflows %}
+                <div class="workflow-block">
+                  <a class="workflow-name" href="{{ workflow.workflow_url }}" target="_blank">{{ workflow.friendly_name or workflow.workflow_name }}</a>
+                  <a class="workflow-status {{ workflow.workflow_status|lower }}" href="{{ workflow.workflow_url }}" target="_blank">
+                    {{ workflow.workflow_status }}
+                  </a>
+                  <a class="time" href="{{ workflow.workflow_url }}" target="_blank">{{ workflow.conclusion_time_one_line }}</a>
+                </div>
+              {% endfor %}
+            {% else %}
+              not yet run
+            {% endif %}
           </td>
           {% endif %}
         </tr>
