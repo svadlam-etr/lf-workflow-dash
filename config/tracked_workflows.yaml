@@ -4,161 +4,193 @@ copier_project: lincc-frameworks/python-project-template
 repos:  
   - repo: int-customersys-ccs-accountBilling-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
   
   - repo: int-customerSys-ccs-accounts-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customersys-ccs-billingcorrection-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customerSys-ccs-billUsage-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customersys-ccs-bpemCase-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customerSys-ccs-businessPartner-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customer-ccs-calculatedDeterminant-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customerSys-ccs-contact-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customerSys-ccs-contractAccount-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customerSys-ccs-contractAccountManagement-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customersys-ccs-customerContact-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customersys-ccs-customerOffHoursPaymentInfo-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customerSys-ccs-custPaymentInfo-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customersys-ccs-disconnectNotice-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customerSys-ccs-drivingDirections-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customerSys-ccs-payments-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customerSys-ccs-premise-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customerSys-ccs-programs-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customer-ccs-quantityDeterminant-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customerSys-ccs-realTimePayments-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customer-ccs-rpcAccounts-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customerSys-ccs-serviceInitiation-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customerSys-ccs-serviceNotification-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customersys-ccs-streetlightbilling-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-CustomerSys-CCS-SyncMeterGasIMU-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customersys-ccs-user-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customerSys-ccs-workOrderManagement-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customersys-tmd-deliveryAddress-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customersys-grc-employee-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customerSys-ccs-partnerAccountData-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customersys-ccs-billProjection-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
   - repo: int-customerSys-salesforce-sms-app
     owner: EntergyCloud
+    live-build: build-deploy.yml
     other_workflows:
       - build-deploy.yml
 
