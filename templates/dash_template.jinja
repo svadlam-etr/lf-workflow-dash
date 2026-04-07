@@ -20,7 +20,7 @@
     }
 
     .table-wrap {
-      max-width: 1400px;
+      max-width: 1600px;
       margin: 0 auto;
     }
 
@@ -47,6 +47,7 @@
       position: sticky;
       top: 0;
       z-index: 1;
+      white-space: nowrap;
     }
 
     tr:nth-child(even) td {
@@ -69,13 +70,16 @@
     }
 
     .status-col {
-      width: 22%;
-      white-space: nowrap;
+      width: 28%;
     }
 
     .workflow-block {
-      margin: 0;
+      margin: 0 0 6px 0;
       padding: 0;
+    }
+
+    .workflow-block:last-child {
+      margin-bottom: 0;
     }
 
     .workflow-name {
@@ -83,12 +87,20 @@
       color: #8fd3ff;
       font-weight: 600;
       margin-bottom: 2px;
+      text-decoration: none;
     }
 
     .workflow-status {
       display: inline-block;
       font-weight: 700;
       margin-right: 10px;
+      text-decoration: none;
+    }
+
+    .time {
+      color: #d9d9d9;
+      white-space: nowrap;
+      text-decoration: none;
     }
 
     .success {
@@ -111,13 +123,8 @@
       margin-right: 6px;
     }
 
-    .time {
-      color: #d9d9d9;
-      white-space: nowrap;
-    }
-
     .footer {
-      max-width: 1400px;
+      max-width: 1600px;
       margin: 14px auto 0 auto;
       font-size: 12px;
       color: #cfcfcf;
@@ -140,7 +147,7 @@
           {% if contains_bench %}<th>Nightly Benchmarks</th>{% endif %}
           {% if contains_docs %}<th>Build Docs</th>{% endif %}
           {% if contains_live %}<th>Live Build</th>{% endif %}
-          {% if contains_other %}<th class="status-col">Workflow-Status</th>{% endif %}
+          {% if contains_other %}<th class="status-col">Other Workflows</th>{% endif %}
         </tr>
       </thead>
       <tbody>
@@ -153,7 +160,9 @@
           {% if contains_smoke %}
           <td>
             {% if project.smoke_test.is_stale %}<span class="stale">stale</span>{% endif %}
-            <span class="workflow-status {{ project.smoke_test.workflow_status|lower }}">{{ project.smoke_test.workflow_status }}</span>
+            <a class="workflow-status {{ project.smoke_test.workflow_status|lower }}" href="{{ project.smoke_test.url }}" target="_blank">
+              {{ project.smoke_test.workflow_status }}
+            </a>
             <a class="time" href="{{ project.smoke_test.url }}" target="_blank">{{ project.smoke_test.conclusion_time }}</a>
           </td>
           {% endif %}
@@ -161,14 +170,18 @@
           {% if contains_bench %}
           <td>
             {% if project.benchmarks.is_stale %}<span class="stale">stale</span>{% endif %}
-            <span class="workflow-status {{ project.benchmarks.workflow_status|lower }}">{{ project.benchmarks.workflow_status }}</span>
+            <a class="workflow-status {{ project.benchmarks.workflow_status|lower }}" href="{{ project.benchmarks.url }}" target="_blank">
+              {{ project.benchmarks.workflow_status }}
+            </a>
             <a class="time" href="{{ project.benchmarks.url }}" target="_blank">{{ project.benchmarks.conclusion_time }}</a>
           </td>
           {% endif %}
 
           {% if contains_docs %}
           <td>
-            <span class="workflow-status {{ project.build_docs.workflow_status|lower }}">{{ project.build_docs.workflow_status }}</span>
+            <a class="workflow-status {{ project.build_docs.workflow_status|lower }}" href="{{ project.build_docs.url }}" target="_blank">
+              {{ project.build_docs.workflow_status }}
+            </a>
             <a class="time" href="{{ project.build_docs.url }}" target="_blank">{{ project.build_docs.conclusion_time }}</a>
           </td>
           {% endif %}
@@ -176,7 +189,9 @@
           {% if contains_live %}
           <td>
             {% if project.live_build.is_stale %}<span class="stale">stale</span>{% endif %}
-            <span class="workflow-status {{ project.live_build.workflow_status|lower }}">{{ project.live_build.workflow_status }}</span>
+            <a class="workflow-status {{ project.live_build.workflow_status|lower }}" href="{{ project.live_build.url }}" target="_blank">
+              {{ project.live_build.workflow_status }}
+            </a>
             <a class="time" href="{{ project.live_build.url }}" target="_blank">{{ project.live_build.conclusion_time }}</a>
           </td>
           {% endif %}
@@ -185,8 +200,10 @@
           <td class="status-col">
             {% for workflow in project.other_workflows %}
               <div class="workflow-block">
-                <span class="workflow-name">{{ workflow.friendly_name }}</span>
-                <span class="workflow-status {{ workflow.workflow_status|lower }}">{{ workflow.workflow_status }}</span>
+                <a class="workflow-name" href="{{ workflow.url }}" target="_blank">{{ workflow.friendly_name }}</a>
+                <a class="workflow-status {{ workflow.workflow_status|lower }}" href="{{ workflow.url }}" target="_blank">
+                  {{ workflow.workflow_status }}
+                </a>
                 <a class="time" href="{{ workflow.url }}" target="_blank">{{ workflow.conclusion_time_one_line }}</a>
               </div>
             {% endfor %}
