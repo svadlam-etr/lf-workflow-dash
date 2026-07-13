@@ -1,1778 +1,918 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LF Builds</title>
-  <style>
-    body {
-      background: #1f1f1f;
-      color: #e8e8e8;
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      padding: 18px;
-    }
-
-    h1 {
-      margin: 0 0 14px 0;
-      font-size: 24px;
-      color: #f3f3f3;
-    }
-
-    .table-wrap {
-      max-width: 1600px;
-      margin: 0 auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      table-layout: auto;
-      background: #2a2a2a;
-    }
-
-    th, td {
-      padding: 6px 10px;
-      font-size: 13px;
-      line-height: 1.2;
-      vertical-align: middle;
-      border-bottom: 1px solid #444;
-      text-align: left;
-    }
-
-    th {
-      background: #202020;
-      color: #f2f2f2;
-      font-weight: 700;
-      position: sticky;
-      top: 0;
-      z-index: 1;
-      white-space: nowrap;
-    }
-
-    tr:nth-child(even) td {
-      background: #303030;
-    }
-
-    a {
-      color: #8fd3ff;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .repo-col {
-      width: 28%;
-      font-weight: 600;
-      word-break: break-word;
-    }
-
-    .status-col {
-      width: 28%;
-    }
-
-    .workflow-block {
-      margin: 0 0 6px 0;
-      padding: 0;
-    }
-
-    .workflow-block:last-child {
-      margin-bottom: 0;
-    }
-
-    .workflow-name {
-      display: block;
-      color: #8fd3ff;
-      font-weight: 600;
-      margin-bottom: 2px;
-      text-decoration: none;
-    }
-
-    .workflow-status {
-      display: inline-block;
-      font-weight: 700;
-      margin-right: 10px;
-      text-decoration: none;
-    }
-
-    .time {
-      color: #d9d9d9;
-      white-space: nowrap;
-      text-decoration: none;
-    }
-
-    .success {
-      color: #8ee26b;
-    }
-
-    .failure,
-    .failed,
-    .error {
-      color: #ff7b7b;
-    }
-
-    .cancelled {
-      color: #ffbf66;
-    }
-
-    .stale {
-      color: #ffbf66;
-      font-style: italic;
-      margin-right: 6px;
-    }
-
-    .footer {
-      max-width: 1600px;
-      margin: 14px auto 0 auto;
-      font-size: 12px;
-      color: #cfcfcf;
-    }
-
-    .footer a {
-      color: #8fd3ff;
-    }
-  </style>
-</head>
-<body>
-  <div class="table-wrap">
-    <h1>LF Builds</h1>
-
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>LF Builds</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <script>
+        setTimeout(function(){
+            window.location.reload();
+        }, 60000);
+        </script>
+    </head>
+    <body>
     <table>
-      <thead>
         <tr>
-          <th class="repo-col">Repository</th>
-          
-          
-          
-          <th>Live Build</th>
-          <th class="status-col">Other Workflows</th>
+            <th colspan="1" scope="colgroup" style="width:150px">Repository</th>
+            <th colspan="1" scope="colgroup" style="width:50px">Copier<br>Version</th>
+            <th colspan="3" scope="colgroup">Nightly Test</th>
+            <th colspan="3" scope="colgroup">Nightly<br>Benchmarks</th>
+            <th colspan="3" scope="colgroup">Build Docs</th>
+            <th colspan="3" scope="colgroup">Live Build</th>
+            <th colspan="1" scope="colgroup">Other Workflows</th>
         </tr>
-      </thead>
-      <tbody>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customersys-ccs-accountBilling-app" target="_blank">int-customersys-ccs-accountBilling-app</a>
-          </td>
+    </tr>
 
-          
-
-          
-
-          
-
-          
-          <td>
-            <span class="stale">stale</span>
-            
-              <a class="workflow-status failure" href="https://github.com/EntergyCloud/int-customersys-ccs-accountBilling-app/actions/workflows/build-deploy.yml" target="_blank">
-                failure
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-accountBilling-app/actions/workflows/build-deploy.yml" target="_blank">18:10<br>01/22/26</a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customersys-ccs-accountBilling-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status failure" href="https://github.com/EntergyCloud/int-customersys-ccs-accountBilling-app/actions/workflows/build-deploy.yml" target="_blank">
-                    failure
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-accountBilling-app/actions/workflows/build-deploy.yml" target="_blank">21:50 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customerSys-ccs-accounts-app" target="_blank">int-customerSys-ccs-accounts-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customerSys-ccs-accounts-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-accounts-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customerSys-ccs-accounts-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status failure" href="https://github.com/EntergyCloud/int-customerSys-ccs-accounts-app/actions/workflows/build-deploy.yml" target="_blank">
-                    failure
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-accounts-app/actions/workflows/build-deploy.yml" target="_blank">22:30 06/24/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customersys-ccs-billingcorrection-app" target="_blank">int-customersys-ccs-billingcorrection-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customersys-ccs-billingcorrection-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-billingcorrection-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customersys-ccs-billingcorrection-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status failure" href="https://github.com/EntergyCloud/int-customersys-ccs-billingcorrection-app/actions/workflows/build-deploy.yml" target="_blank">
-                    failure
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-billingcorrection-app/actions/workflows/build-deploy.yml" target="_blank">21:51 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customerSys-ccs-billUsage-app" target="_blank">int-customerSys-ccs-billUsage-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customerSys-ccs-billUsage-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-billUsage-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customerSys-ccs-billUsage-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status failure" href="https://github.com/EntergyCloud/int-customerSys-ccs-billUsage-app/actions/workflows/build-deploy.yml" target="_blank">
-                    failure
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-billUsage-app/actions/workflows/build-deploy.yml" target="_blank">21:52 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customersys-ccs-bpemCase-app" target="_blank">int-customersys-ccs-bpemCase-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customersys-ccs-bpemCase-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-bpemCase-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customersys-ccs-bpemCase-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status failure" href="https://github.com/EntergyCloud/int-customersys-ccs-bpemCase-app/actions/workflows/build-deploy.yml" target="_blank">
-                    failure
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-bpemCase-app/actions/workflows/build-deploy.yml" target="_blank">21:52 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customerSys-ccs-businessPartner-app" target="_blank">int-customerSys-ccs-businessPartner-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customerSys-ccs-businessPartner-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-businessPartner-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customerSys-ccs-businessPartner-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customerSys-ccs-businessPartner-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-businessPartner-app/actions/workflows/build-deploy.yml" target="_blank">17:23 06/30/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customer-ccs-calculatedDeterminant-app" target="_blank">int-customer-ccs-calculatedDeterminant-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customer-ccs-calculatedDeterminant-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customer-ccs-calculatedDeterminant-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customer-ccs-calculatedDeterminant-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customer-ccs-calculatedDeterminant-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customer-ccs-calculatedDeterminant-app/actions/workflows/build-deploy.yml" target="_blank">21:53 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customerSys-ccs-contact-app" target="_blank">int-customerSys-ccs-contact-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customerSys-ccs-contact-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-contact-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customerSys-ccs-contact-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customerSys-ccs-contact-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-contact-app/actions/workflows/build-deploy.yml" target="_blank">21:53 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customerSys-ccs-contractAccount-app" target="_blank">int-customerSys-ccs-contractAccount-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customerSys-ccs-contractAccount-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-contractAccount-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customerSys-ccs-contractAccount-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customerSys-ccs-contractAccount-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-contractAccount-app/actions/workflows/build-deploy.yml" target="_blank">21:58 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customerSys-ccs-contractAccountManagement-app" target="_blank">int-customerSys-ccs-contractAccountManagement-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customerSys-ccs-contractAccountManagement-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-contractAccountManagement-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customerSys-ccs-contractAccountManagement-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customerSys-ccs-contractAccountManagement-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-contractAccountManagement-app/actions/workflows/build-deploy.yml" target="_blank">22:26 06/24/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customersys-ccs-customerContact-app" target="_blank">int-customersys-ccs-customerContact-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customersys-ccs-customerContact-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-customerContact-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customersys-ccs-customerContact-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customersys-ccs-customerContact-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-customerContact-app/actions/workflows/build-deploy.yml" target="_blank">22:00 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customersys-ccs-customerOffHoursPaymentInfo-app" target="_blank">int-customersys-ccs-customerOffHoursPaymentInfo-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            <span class="stale">stale</span>
-            
-              <a class="workflow-status failure" href="https://github.com/EntergyCloud/int-customersys-ccs-customerOffHoursPaymentInfo-app/actions/workflows/build-deploy.yml" target="_blank">
-                failure
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-customerOffHoursPaymentInfo-app/actions/workflows/build-deploy.yml" target="_blank">18:02<br>02/25/26</a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customersys-ccs-customerOffHoursPaymentInfo-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customersys-ccs-customerOffHoursPaymentInfo-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-customerOffHoursPaymentInfo-app/actions/workflows/build-deploy.yml" target="_blank">22:02 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customerSys-ccs-custPaymentInfo-app" target="_blank">int-customerSys-ccs-custPaymentInfo-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customerSys-ccs-custPaymentInfo-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-custPaymentInfo-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customerSys-ccs-custPaymentInfo-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customerSys-ccs-custPaymentInfo-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-custPaymentInfo-app/actions/workflows/build-deploy.yml" target="_blank">22:03 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customersys-ccs-disconnectNotice-app" target="_blank">int-customersys-ccs-disconnectNotice-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status 404" href="https://github.com/EntergyCloud/int-customersys-ccs-disconnectNotice-app/actions/workflows/build-deploy.yml" target="_blank">
-                404
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-disconnectNotice-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customersys-ccs-disconnectNotice-app/actions/workflows/build-deploy.yml" target="_blank">build-deploy.yml</a>
-                  <a class="workflow-status 404" href="https://github.com/EntergyCloud/int-customersys-ccs-disconnectNotice-app/actions/workflows/build-deploy.yml" target="_blank">
-                    404
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-disconnectNotice-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customerSys-ccs-drivingDirections-app" target="_blank">int-customerSys-ccs-drivingDirections-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customerSys-ccs-drivingDirections-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-drivingDirections-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customerSys-ccs-drivingDirections-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customerSys-ccs-drivingDirections-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-drivingDirections-app/actions/workflows/build-deploy.yml" target="_blank">22:06 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customerSys-ccs-payments-app" target="_blank">int-customerSys-ccs-payments-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customerSys-ccs-payments-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-payments-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customerSys-ccs-payments-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customerSys-ccs-payments-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-payments-app/actions/workflows/build-deploy.yml" target="_blank">22:28 06/24/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customerSys-ccs-premise-app" target="_blank">int-customerSys-ccs-premise-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customerSys-ccs-premise-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-premise-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customerSys-ccs-premise-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customerSys-ccs-premise-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-premise-app/actions/workflows/build-deploy.yml" target="_blank">16:23 06/25/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customerSys-ccs-programs-app" target="_blank">int-customerSys-ccs-programs-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customerSys-ccs-programs-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-programs-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customerSys-ccs-programs-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customerSys-ccs-programs-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-programs-app/actions/workflows/build-deploy.yml" target="_blank">22:28 06/24/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customer-ccs-quantityDeterminant-app" target="_blank">int-customer-ccs-quantityDeterminant-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customer-ccs-quantityDeterminant-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customer-ccs-quantityDeterminant-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customer-ccs-quantityDeterminant-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customer-ccs-quantityDeterminant-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customer-ccs-quantityDeterminant-app/actions/workflows/build-deploy.yml" target="_blank">17:34 06/30/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customerSys-ccs-realTimePayments-app" target="_blank">int-customerSys-ccs-realTimePayments-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customerSys-ccs-realTimePayments-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-realTimePayments-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customerSys-ccs-realTimePayments-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customerSys-ccs-realTimePayments-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-realTimePayments-app/actions/workflows/build-deploy.yml" target="_blank">22:08 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customer-ccs-rpcAccounts-app" target="_blank">int-customer-ccs-rpcAccounts-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customer-ccs-rpcAccounts-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customer-ccs-rpcAccounts-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customer-ccs-rpcAccounts-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customer-ccs-rpcAccounts-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customer-ccs-rpcAccounts-app/actions/workflows/build-deploy.yml" target="_blank">21:51 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customerSys-ccs-serviceInitiation-app" target="_blank">int-customerSys-ccs-serviceInitiation-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customerSys-ccs-serviceInitiation-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-serviceInitiation-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customerSys-ccs-serviceInitiation-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customerSys-ccs-serviceInitiation-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-serviceInitiation-app/actions/workflows/build-deploy.yml" target="_blank">22:28 06/24/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customerSys-ccs-serviceNotification-app" target="_blank">int-customerSys-ccs-serviceNotification-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customerSys-ccs-serviceNotification-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-serviceNotification-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customerSys-ccs-serviceNotification-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customerSys-ccs-serviceNotification-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-serviceNotification-app/actions/workflows/build-deploy.yml" target="_blank">18:26 07/08/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customersys-ccs-streetlightbilling-app" target="_blank">int-customersys-ccs-streetlightbilling-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customersys-ccs-streetlightbilling-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-streetlightbilling-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customersys-ccs-streetlightbilling-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customersys-ccs-streetlightbilling-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-streetlightbilling-app/actions/workflows/build-deploy.yml" target="_blank">21:59 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-CustomerSys-CCS-SyncMeterGasIMU-app" target="_blank">int-CustomerSys-CCS-SyncMeterGasIMU-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-CustomerSys-CCS-SyncMeterGasIMU-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-CustomerSys-CCS-SyncMeterGasIMU-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-CustomerSys-CCS-SyncMeterGasIMU-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-CustomerSys-CCS-SyncMeterGasIMU-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-CustomerSys-CCS-SyncMeterGasIMU-app/actions/workflows/build-deploy.yml" target="_blank">22:09 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customersys-ccs-user-app" target="_blank">int-customersys-ccs-user-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customersys-ccs-user-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-user-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customersys-ccs-user-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customersys-ccs-user-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-user-app/actions/workflows/build-deploy.yml" target="_blank">22:00 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customerSys-ccs-workOrderManagement-app" target="_blank">int-customerSys-ccs-workOrderManagement-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customerSys-ccs-workOrderManagement-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-workOrderManagement-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customerSys-ccs-workOrderManagement-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customerSys-ccs-workOrderManagement-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-workOrderManagement-app/actions/workflows/build-deploy.yml" target="_blank">22:25 06/24/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customersys-tmd-deliveryAddress-app" target="_blank">int-customersys-tmd-deliveryAddress-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customersys-tmd-deliveryAddress-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customersys-tmd-deliveryAddress-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customersys-tmd-deliveryAddress-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customersys-tmd-deliveryAddress-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customersys-tmd-deliveryAddress-app/actions/workflows/build-deploy.yml" target="_blank">22:03 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customersys-grc-employee-app" target="_blank">int-customersys-grc-employee-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customersys-grc-employee-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customersys-grc-employee-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customersys-grc-employee-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status failure" href="https://github.com/EntergyCloud/int-customersys-grc-employee-app/actions/workflows/build-deploy.yml" target="_blank">
-                    failure
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customersys-grc-employee-app/actions/workflows/build-deploy.yml" target="_blank">22:01 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customerSys-ccs-partnerAccountData-app" target="_blank">int-customerSys-ccs-partnerAccountData-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            <span class="stale">stale</span>
-            
-              <a class="workflow-status failure" href="https://github.com/EntergyCloud/int-customerSys-ccs-partnerAccountData-app/actions/workflows/build-deploy.yml" target="_blank">
-                failure
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-partnerAccountData-app/actions/workflows/build-deploy.yml" target="_blank">22:12<br>03/05/26</a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customerSys-ccs-partnerAccountData-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customerSys-ccs-partnerAccountData-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customerSys-ccs-partnerAccountData-app/actions/workflows/build-deploy.yml" target="_blank">22:27 06/24/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customersys-ccs-billProjection-app" target="_blank">int-customersys-ccs-billProjection-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customersys-ccs-billProjection-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-billProjection-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customersys-ccs-billProjection-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customersys-ccs-billProjection-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-billProjection-app/actions/workflows/build-deploy.yml" target="_blank">21:53 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customerSys-salesforce-sms-app" target="_blank">int-customerSys-salesforce-sms-app</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              <a class="workflow-status not yet run" href="https://github.com/EntergyCloud/int-customerSys-salesforce-sms-app/actions/workflows/build-deploy.yml" target="_blank">
-                not yet run
-              </a>
-              <a class="time" href="https://github.com/EntergyCloud/int-customerSys-salesforce-sms-app/actions/workflows/build-deploy.yml" target="_blank"></a>
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customerSys-salesforce-sms-app/actions/workflows/build-deploy.yml" target="_blank">int-middleware-apps-trigger</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customerSys-salesforce-sms-app/actions/workflows/build-deploy.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customerSys-salesforce-sms-app/actions/workflows/build-deploy.yml" target="_blank">22:01 06/27/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-common-framework-logger" target="_blank">int-common-framework-logger</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              not yet run
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-common-framework-logger/actions/workflows/Build & Publish-logger.yml" target="_blank">Build & Publish Logger Module</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-common-framework-logger/actions/workflows/Build & Publish-logger.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-common-framework-logger/actions/workflows/Build & Publish-logger.yml" target="_blank">11:34 02/18/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-common-framework-httpconnection" target="_blank">int-common-framework-httpconnection</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              not yet run
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-common-framework-httpconnection/actions/workflows/Build & Publish-HTTPConnection.yml" target="_blank">Build & Publish HTTPConnection Module</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-common-framework-httpconnection/actions/workflows/Build & Publish-HTTPConnection.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-common-framework-httpconnection/actions/workflows/Build & Publish-HTTPConnection.yml" target="_blank">11:49 02/18/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customersys-ccs-sapconnection" target="_blank">int-customersys-ccs-sapconnection</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              not yet run
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customersys-ccs-sapconnection/actions/workflows/Build & Publish-sapconnection.yml" target="_blank">Build & Publish SAPCONNECTION Module</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customersys-ccs-sapconnection/actions/workflows/Build & Publish-sapconnection.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-sapconnection/actions/workflows/Build & Publish-sapconnection.yml" target="_blank">23:34 02/23/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-common-framework-jmsconnection" target="_blank">int-common-framework-jmsconnection</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              not yet run
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-common-framework-jmsconnection/actions/workflows/Build & Publish-jmsconnection.yml" target="_blank">Build & Publish JMSCONNECTION Module</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-common-framework-jmsconnection/actions/workflows/Build & Publish-jmsconnection.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-common-framework-jmsconnection/actions/workflows/Build & Publish-jmsconnection.yml" target="_blank">18:47 02/17/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-common-framework-security" target="_blank">int-common-framework-security</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              not yet run
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-common-framework-security/actions/workflows/Build & Publish-security.yml" target="_blank">Build & Publish Security Module</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-common-framework-security/actions/workflows/Build & Publish-security.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-common-framework-security/actions/workflows/Build & Publish-security.yml" target="_blank">21:35 02/18/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customersys-ccs-masterdata" target="_blank">int-customersys-ccs-masterdata</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              not yet run
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customersys-ccs-masterdata/actions/workflows/Build & Publish-logger.yml" target="_blank">Build & Publish Masterdata Module</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customersys-ccs-masterdata/actions/workflows/Build & Publish-logger.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customersys-ccs-masterdata/actions/workflows/Build & Publish-logger.yml" target="_blank">12:21 05/05/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-enterprise-common-customerinfo" target="_blank">int-enterprise-common-customerinfo</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              not yet run
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-enterprise-common-customerinfo/actions/workflows/Build & Publish-customerinfo.yml" target="_blank">Build & Publish CustomerInfo Module</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-enterprise-common-customerinfo/actions/workflows/Build & Publish-customerinfo.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-enterprise-common-customerinfo/actions/workflows/Build & Publish-customerinfo.yml" target="_blank">16:41 02/26/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-hr.common-employee" target="_blank">int-hr.common-employee</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              not yet run
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-hr.common-employee/actions/workflows/Build & Publish-employee.yml" target="_blank">Build & Publish Employee Module</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-hr.common-employee/actions/workflows/Build & Publish-employee.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-hr.common-employee/actions/workflows/Build & Publish-employee.yml" target="_blank">10:04 02/18/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-        <tr>
-          <td class="repo-col">
-            <a href="https://github.com/EntergyCloud/int-customersys.salesforce.sfmcconnection" target="_blank">int-customersys.salesforce.sfmcconnection</a>
-          </td>
-
-          
-
-          
-
-          
-
-          
-          <td>
-            
-            
-              not yet run
-            
-          </td>
-          
-
-          
-          <td class="status-col">
-            
-              
-                <div class="workflow-block">
-                  <a class="workflow-name" href="https://github.com/EntergyCloud/int-customersys.salesforce.sfmcconnection/actions/workflows/Build & Publish-sfmcconnection.yml" target="_blank">Build & Publish SfmcConnection Module</a>
-                  <a class="workflow-status success" href="https://github.com/EntergyCloud/int-customersys.salesforce.sfmcconnection/actions/workflows/Build & Publish-sfmcconnection.yml" target="_blank">
-                    success
-                  </a>
-                  <a class="time" href="https://github.com/EntergyCloud/int-customersys.salesforce.sfmcconnection/actions/workflows/Build & Publish-sfmcconnection.yml" target="_blank">09:19 03/04/26</a>
-                </div>
-              
-            
-          </td>
-          
-        </tr>
-        
-      </tbody>
-    </table>
-  </div>
-
-  <div class="footer">
-    Last Updated 06:15 July 13, 2026 (US-NYC) |
-    <a href="lf-workflow-dash">dashboard repo</a>
     
-  </div>
-</body>
+    <tr>
+        <td><a href="https://github.com/lincc-frameworks/asv-formatter">asv-formatter</a></td>
+        <td class="green-cell">2.2.0</td>
+        <!-- Smoke Test -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/asv-formatter/actions/workflows/smoke-test.yml">
+                05:57<br>07/13/26
+            </a>
+        </td>
+        <!-- Benchmarks -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Build Docs (don't worry about is_stale here) -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Live Build -->
+        <td class="green-cell align-right">
+            <span class="gray-cell">stale</span><br/>
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="gray-cell fa fa-clock-o"></i><br/>
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/asv-formatter/actions/workflows/testing-and-coverage.yml">
+                11:20<br>06/01/26
+            </a>
+        </td>
+        <!-- Other -->
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td><a href="https://github.com/lincc-frameworks/citation-compass">citation-compass</a></td>
+        <td class="green-cell">2.2.0</td>
+        <!-- Smoke Test -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/citation-compass/actions/workflows/smoke-test.yml">
+                06:01<br>07/13/26
+            </a>
+        </td>
+        <!-- Benchmarks -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/citation-compass/actions/workflows/asv-nightly.yml">
+                05:58<br>07/13/26
+            </a>
+        </td>
+        <!-- Build Docs (don't worry about is_stale here) -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Live Build -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/citation-compass/actions/workflows/testing-and-coverage.yml">
+                08:25<br>07/01/26
+            </a>
+        </td>
+        <!-- Other -->
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td><a href="https://github.com/astronomy-commons/hats">hats</a></td>
+        <td class="green-cell">2.2.0</td>
+        <!-- Smoke Test -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/astronomy-commons/hats/actions/workflows/smoke-test.yml">
+                03:51<br>07/13/26
+            </a>
+        </td>
+        <!-- Benchmarks -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/astronomy-commons/hats/actions/workflows/asv-nightly.yml">
+                03:58<br>07/13/26
+            </a>
+        </td>
+        <!-- Build Docs (don't worry about is_stale here) -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Live Build -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/astronomy-commons/hats/actions/workflows/testing-and-coverage.yml">
+                13:38<br>07/10/26
+            </a>
+        </td>
+        <!-- Other -->
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td><a href="https://github.com/astronomy-commons/hats-cloudtests">hats-cloudtests</a></td>
+        <td class="green-cell">2.2.0</td>
+        <!-- Smoke Test -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/astronomy-commons/hats-cloudtests/actions/workflows/smoke-test.yml">
+                08:31<br>07/13/26
+            </a>
+        </td>
+        <!-- Benchmarks -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/astronomy-commons/hats-cloudtests/actions/workflows/asv-nightly.yml">
+                03:51<br>07/13/26
+            </a>
+        </td>
+        <!-- Build Docs (don't worry about is_stale here) -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Live Build -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/astronomy-commons/hats-cloudtests/actions/workflows/testing-and-coverage.yml">
+                18:18<br>07/10/26
+            </a>
+        </td>
+        <!-- Other -->
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td><a href="https://github.com/astronomy-commons/hats-import">hats-import</a></td>
+        <td class="green-cell">2.2.0</td>
+        <!-- Smoke Test -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/astronomy-commons/hats-import/actions/workflows/smoke-test.yml">
+                03:51<br>07/13/26
+            </a>
+        </td>
+        <!-- Benchmarks -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Build Docs (don't worry about is_stale here) -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Live Build -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/astronomy-commons/hats-import/actions/workflows/testing-and-coverage.yml">
+                18:10<br>07/09/26
+            </a>
+        </td>
+        <!-- Other -->
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td><a href="https://github.com/lincc-frameworks/hyrax">hyrax</a></td>
+        <td class="green-cell">2.2.0</td>
+        <!-- Smoke Test -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/hyrax/actions/workflows/smoke-test.yml">
+                06:02<br>07/13/26
+            </a>
+        </td>
+        <!-- Benchmarks -->
+        <td class="red-cell align-right">
+            failure
+        </td>
+        <td class="red-cell align-center">
+            <i class="fa fa-times-circle"></i>
+        </td>
+        <td class="red-cell">
+            <a href="https://github.com/lincc-frameworks/hyrax/actions/workflows/asv-nightly.yml">
+                06:00<br>07/13/26
+            </a>
+        </td>
+        <!-- Build Docs (don't worry about is_stale here) -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/hyrax/actions/workflows/build-documentation.yml">
+                19:13<br>07/10/26
+            </a>
+        </td>
+        <!-- Live Build -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/hyrax/actions/workflows/testing-and-coverage.yml">
+                18:00<br>07/09/26
+            </a>
+        </td>
+        <!-- Other -->
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td><a href="https://github.com/dirac-institute/kbmod">kbmod</a></td>
+        <td class="yellow-cell"></td>
+        <!-- Smoke Test -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/dirac-institute/kbmod/actions/workflows/canary_builds.yaml">
+                05:32<br>07/13/26
+            </a>
+        </td>
+        <!-- Benchmarks -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Build Docs (don't worry about is_stale here) -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/dirac-institute/kbmod/actions/workflows/build_docs.yaml">
+                02:05<br>07/13/26
+            </a>
+        </td>
+        <!-- Live Build -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/dirac-institute/kbmod/actions/workflows/pr_tests.yaml">
+                16:46<br>07/10/26
+            </a>
+        </td>
+        <!-- Other -->
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td><a href="https://github.com/lincc-frameworks/koffi">koffi</a></td>
+        <td class="yellow-cell">2.0.1</td>
+        <!-- Smoke Test -->
+        <td class="green-cell align-right">
+            <span class="gray-cell">stale</span><br/>
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="gray-cell fa fa-clock-o"></i><br/>
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/koffi/actions/workflows/smoke-test.yml">
+                01:56<br>11/12/25
+            </a>
+        </td>
+        <!-- Benchmarks -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Build Docs (don't worry about is_stale here) -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Live Build -->
+        <td class="yellow-cell align-right">
+            not yet run
+        </td>
+        <td class="yellow-cell align-center">
+            <i class="fa fa-question-circle"></i>
+        </td>
+        <td class="yellow-cell">
+            <a href="https://github.com/lincc-frameworks/koffi/actions/workflows/testing-and-coverage.yml">
+                
+            </a>
+        </td>
+        <!-- Other -->
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td><a href="https://github.com/lincc-frameworks/lf-workflow-dash">lf-workflow-dash</a></td>
+        <td class="green-cell">2.2.0</td>
+        <!-- Smoke Test -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/lf-workflow-dash/actions/workflows/smoke-test.yml">
+                05:58<br>07/13/26
+            </a>
+        </td>
+        <!-- Benchmarks -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Build Docs (don't worry about is_stale here) -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Live Build -->
+        <td class="green-cell align-right">
+            <span class="gray-cell">stale</span><br/>
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="gray-cell fa fa-clock-o"></i><br/>
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/lf-workflow-dash/actions/workflows/testing-and-coverage.yml">
+                12:00<br>06/01/26
+            </a>
+        </td>
+        <!-- Other -->
+        <td>
+            
+                <a href="https://github.com/lincc-frameworks/lf-workflow-dash/actions/workflows/main.yml">Update dashboard html</a>
+                <br/>
+                <div class="green-cell inline">success <i class="fa fa-check-circle"></i></div>
+                <div class="inline"><a href="https://github.com/lincc-frameworks/lf-workflow-dash/actions/workflows/main.yml">08:27 07/13/26</a></div>
+                <br/>
+            </a>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td><a href="https://github.com/astronomy-commons/lsdb">lsdb</a></td>
+        <td class="green-cell">2.2.0</td>
+        <!-- Smoke Test -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/astronomy-commons/lsdb/actions/workflows/smoke-test.yml">
+                03:56<br>07/13/26
+            </a>
+        </td>
+        <!-- Benchmarks -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/astronomy-commons/lsdb/actions/workflows/asv-nightly.yml">
+                03:55<br>07/13/26
+            </a>
+        </td>
+        <!-- Build Docs (don't worry about is_stale here) -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Live Build -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/astronomy-commons/lsdb/actions/workflows/testing-and-coverage.yml">
+                18:11<br>07/09/26
+            </a>
+        </td>
+        <!-- Other -->
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td><a href="https://github.com/lincc-frameworks/nested-pandas">nested-pandas</a></td>
+        <td class="green-cell">2.2.0</td>
+        <!-- Smoke Test -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/nested-pandas/actions/workflows/smoke-test.yml">
+                06:01<br>07/13/26
+            </a>
+        </td>
+        <!-- Benchmarks -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/nested-pandas/actions/workflows/asv-nightly.yml">
+                05:57<br>07/13/26
+            </a>
+        </td>
+        <!-- Build Docs (don't worry about is_stale here) -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/nested-pandas/actions/workflows/build-documentation.yml">
+                11:53<br>07/09/26
+            </a>
+        </td>
+        <!-- Live Build -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/nested-pandas/actions/workflows/testing-and-coverage.yml">
+                11:53<br>07/09/26
+            </a>
+        </td>
+        <!-- Other -->
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td><a href="https://github.com/lincc-frameworks/python-project-template">python-project-template</a></td>
+        <td class="green-cell">2.2.0</td>
+        <!-- Smoke Test -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/python-project-template/actions/workflows/smoke-test.yml">
+                06:04<br>07/13/26
+            </a>
+        </td>
+        <!-- Benchmarks -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Build Docs (don't worry about is_stale here) -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Live Build -->
+        <td class="green-cell align-right">
+            <span class="gray-cell">stale</span><br/>
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="gray-cell fa fa-clock-o"></i><br/>
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/python-project-template/actions/workflows/ci.yml">
+                15:40<br>01/26/26
+            </a>
+        </td>
+        <!-- Other -->
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td><a href="https://github.com/lincc-frameworks/pre-commit-hooks">pre-commit-hooks</a></td>
+        <td class="green-cell">2.2.0</td>
+        <!-- Smoke Test -->
+        <td class="green-cell align-right">
+            <span class="gray-cell">stale</span><br/>
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="gray-cell fa fa-clock-o"></i><br/>
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/pre-commit-hooks/actions/workflows/smoke-test.yml">
+                03:41<br>03/29/26
+            </a>
+        </td>
+        <!-- Benchmarks -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Build Docs (don't worry about is_stale here) -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Live Build -->
+        <td class="green-cell align-right">
+            <span class="gray-cell">stale</span><br/>
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="gray-cell fa fa-clock-o"></i><br/>
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/pre-commit-hooks/actions/workflows/testing-and-coverage.yml">
+                13:58<br>01/27/26
+            </a>
+        </td>
+        <!-- Other -->
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td><a href="https://github.com/lincc-frameworks/lightcurvelynx">lightcurvelynx</a></td>
+        <td class="green-cell">2.2.0</td>
+        <!-- Smoke Test -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/lightcurvelynx/actions/workflows/smoke-test.yml">
+                05:59<br>07/13/26
+            </a>
+        </td>
+        <!-- Benchmarks -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/lightcurvelynx/actions/workflows/asv-nightly.yml">
+                05:58<br>07/13/26
+            </a>
+        </td>
+        <!-- Build Docs (don't worry about is_stale here) -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Live Build -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/lightcurvelynx/actions/workflows/testing-and-coverage.yml">
+                17:24<br>07/10/26
+            </a>
+        </td>
+        <!-- Other -->
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td><a href="https://github.com/lincc-frameworks/uncle-val">uncle-val</a></td>
+        <td class="green-cell">2.2.0</td>
+        <!-- Smoke Test -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/uncle-val/actions/workflows/smoke-test.yml">
+                06:11<br>07/13/26
+            </a>
+        </td>
+        <!-- Benchmarks -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Build Docs (don't worry about is_stale here) -->
+        <td class=" align-right">
+            
+        </td>
+        <td class=" align-center">
+            <i class=""></i>
+        </td>
+        <td class="">
+            <a href="">
+                
+            </a>
+        </td>
+        <!-- Live Build -->
+        <td class="green-cell align-right">
+            success
+        </td>
+        <td class="green-cell align-center">
+            <i class="fa fa-check-circle"></i>
+        </td>
+        <td class="green-cell">
+            <a href="https://github.com/lincc-frameworks/uncle-val/actions/workflows/testing-and-coverage.yml">
+                15:21<br>07/09/26
+            </a>
+        </td>
+        <!-- Other -->
+        <td>
+            
+        </td>
+    </tr>
+    
+    </table>
+
+    <p>
+        Last Updated 08:46 July 13, 2026 (US-NYC) | 
+        <a href='https://github.com/lincc-frameworks/lf-workflow-dash'><i class=\"fa fa-github\"></i> lf-workflow-dash</a>
+        
+        | <a href='https://lincc-frameworks.github.io/lf-workflow-dash/lsdb.html'><i class=\"fa fa-github\"></i> LSDB Dash</a>
+        
+        | <a href='https://lincc-frameworks.github.io/lf-workflow-dash/rail.html'><i class=\"fa fa-github\"></i> RAIL Dash</a>
+        
+        | <a href='https://lincc-frameworks.github.io/lf-workflow-dash/incubator.html'><i class=\"fa fa-github\"></i> Incubator Dash</a>
+        
+    </p>
+
+    </body>
 </html>
